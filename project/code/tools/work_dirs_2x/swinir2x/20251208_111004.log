@@ -1,0 +1,63 @@
+2025-12-08 11:10:04,586 - mmedit - INFO - Set random seed to 1154915433, deterministic: False
+2025-12-08 11:10:05,677 - mmedit - INFO - Start running, host: ASUS@∑Î”ÓΩ‹, work_dir: G:\code\code\tools\work_dirs_2x\swinir2x
+2025-12-08 11:10:05,678 - mmedit - INFO - Hooks will be executed in the following order:
+before_run:
+(VERY_HIGH   ) PolyLrUpdaterHook                  
+(NORMAL      ) CheckpointHook                     
+(VERY_LOW    ) TextLoggerHook                     
+(VERY_LOW    ) TensorboardLoggerHook              
+ -------------------- 
+before_train_epoch:
+(VERY_HIGH   ) PolyLrUpdaterHook                  
+(LOW         ) IterTimerHook                      
+(VERY_LOW    ) TextLoggerHook                     
+(VERY_LOW    ) TensorboardLoggerHook              
+ -------------------- 
+before_train_iter:
+(VERY_HIGH   ) PolyLrUpdaterHook                  
+(LOW         ) IterTimerHook                      
+ -------------------- 
+after_train_iter:
+(NORMAL      ) CheckpointHook                     
+(LOW         ) IterTimerHook                      
+(LOW         ) EvalIterHook                       
+(VERY_LOW    ) TextLoggerHook                     
+(VERY_LOW    ) TensorboardLoggerHook              
+ -------------------- 
+after_train_epoch:
+(NORMAL      ) CheckpointHook                     
+(VERY_LOW    ) TextLoggerHook                     
+(VERY_LOW    ) TensorboardLoggerHook              
+ -------------------- 
+before_val_epoch:
+(LOW         ) IterTimerHook                      
+(VERY_LOW    ) TextLoggerHook                     
+(VERY_LOW    ) TensorboardLoggerHook              
+ -------------------- 
+before_val_iter:
+(LOW         ) IterTimerHook                      
+ -------------------- 
+after_val_iter:
+(LOW         ) IterTimerHook                      
+ -------------------- 
+after_val_epoch:
+(VERY_LOW    ) TextLoggerHook                     
+(VERY_LOW    ) TensorboardLoggerHook              
+ -------------------- 
+after_run:
+(VERY_LOW    ) TextLoggerHook                     
+(VERY_LOW    ) TensorboardLoggerHook              
+ -------------------- 
+2025-12-08 11:10:05,690 - mmedit - INFO - workflow: [('train', 1)], max: 20000 iters
+2025-12-08 11:10:05,690 - mmedit - INFO - Checkpoints will be saved to G:\code\code\tools\work_dirs_2x\swinir2x by HardDiskBackend.
+2025-12-08 11:10:35,796 - mmedit - INFO - Iter [50/20000]	lr_generator: 1.997e-04, eta: 1:53:06, time: 0.340, data_time: 0.051, memory: 405, loss_pix: 0.0727, loss: 0.0727
+2025-12-08 11:10:43,512 - mmedit - INFO - Iter [100/20000]	lr_generator: 1.993e-04, eta: 1:21:59, time: 0.154, data_time: 0.084, memory: 405, loss_pix: 0.0429, loss: 0.0429
+2025-12-08 11:10:51,194 - mmedit - INFO - Iter [150/20000]	lr_generator: 1.990e-04, eta: 1:11:28, time: 0.154, data_time: 0.084, memory: 405, loss_pix: 0.0382, loss: 0.0382
+2025-12-08 11:10:58,920 - mmedit - INFO - Iter [200/20000]	lr_generator: 1.987e-04, eta: 1:06:12, time: 0.154, data_time: 0.085, memory: 405, loss_pix: 0.0303, loss: 0.0303
+2025-12-08 11:11:06,558 - mmedit - INFO - Iter [250/20000]	lr_generator: 1.983e-04, eta: 1:02:53, time: 0.153, data_time: 0.084, memory: 405, loss_pix: 0.0277, loss: 0.0277
+2025-12-08 11:11:14,167 - mmedit - INFO - Iter [300/20000]	lr_generator: 1.980e-04, eta: 1:00:36, time: 0.152, data_time: 0.084, memory: 405, loss_pix: 0.0302, loss: 0.0302
+2025-12-08 11:11:21,810 - mmedit - INFO - Iter [350/20000]	lr_generator: 1.976e-04, eta: 0:58:58, time: 0.153, data_time: 0.084, memory: 405, loss_pix: 0.0228, loss: 0.0228
+2025-12-08 11:11:29,680 - mmedit - INFO - Iter [400/20000]	lr_generator: 1.973e-04, eta: 0:57:53, time: 0.157, data_time: 0.083, memory: 405, loss_pix: 0.0223, loss: 0.0223
+2025-12-08 11:11:39,137 - mmedit - INFO - Iter [450/20000]	lr_generator: 1.970e-04, eta: 0:58:10, time: 0.189, data_time: 0.086, memory: 405, loss_pix: 0.0229, loss: 0.0229
+2025-12-08 11:11:48,439 - mmedit - INFO - Iter [500/20000]	lr_generator: 1.966e-04, eta: 0:58:16, time: 0.186, data_time: 0.085, memory: 405, loss_pix: 0.0223, loss: 0.0223
+2025-12-08 11:11:56,632 - mmedit - INFO - Iter [550/20000]	lr_generator: 1.963e-04, eta: 0:57:40, time: 0.164, data_time: 0.084, memory: 405, loss_pix: 0.0233, loss: 0.0233

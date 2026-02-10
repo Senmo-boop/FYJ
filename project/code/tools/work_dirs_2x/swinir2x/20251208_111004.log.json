@@ -1,0 +1,12 @@
+{"exp_name": "swinir2x", "mmedit Version": "0.16.0", "seed": 1154915433}
+{"mode": "train", "epoch": 2, "iter": 50, "lr": {"generator": 0.00019966920944668046}, "memory": 405, "data_time": 0.05095, "loss_pix": 0.07266, "loss": 0.07266, "time": 0.34018}
+{"mode": "train", "epoch": 4, "iter": 100, "lr": {"generator": 0.00019933158430715625}, "memory": 405, "data_time": 0.08438, "loss_pix": 0.04295, "loss": 0.04295, "time": 0.15426}
+{"mode": "train", "epoch": 6, "iter": 150, "lr": {"generator": 0.00019899387433070694}, "memory": 405, "data_time": 0.0842, "loss_pix": 0.03818, "loss": 0.03818, "time": 0.15363}
+{"mode": "train", "epoch": 8, "iter": 200, "lr": {"generator": 0.00019865607928224975}, "memory": 405, "data_time": 0.08452, "loss_pix": 0.0303, "loss": 0.0303, "time": 0.1545}
+{"mode": "train", "epoch": 10, "iter": 250, "lr": {"generator": 0.0001983181989254552}, "memory": 405, "data_time": 0.0841, "loss_pix": 0.02772, "loss": 0.02772, "time": 0.15277}
+{"mode": "train", "epoch": 12, "iter": 300, "lr": {"generator": 0.00019798023302273712}, "memory": 405, "data_time": 0.08403, "loss_pix": 0.03017, "loss": 0.03017, "time": 0.15218}
+{"mode": "train", "epoch": 14, "iter": 350, "lr": {"generator": 0.0001976421813352431}, "memory": 405, "data_time": 0.08433, "loss_pix": 0.02283, "loss": 0.02283, "time": 0.15285}
+{"mode": "train", "epoch": 16, "iter": 400, "lr": {"generator": 0.00019730404362284417}, "memory": 405, "data_time": 0.08343, "loss_pix": 0.02232, "loss": 0.02232, "time": 0.1574}
+{"mode": "train", "epoch": 18, "iter": 450, "lr": {"generator": 0.00019696581964412496}, "memory": 405, "data_time": 0.08597, "loss_pix": 0.02285, "loss": 0.02285, "time": 0.18913}
+{"mode": "train", "epoch": 20, "iter": 500, "lr": {"generator": 0.0001966275091563733}, "memory": 405, "data_time": 0.08498, "loss_pix": 0.02225, "loss": 0.02225, "time": 0.18605}
+{"mode": "train", "epoch": 22, "iter": 550, "lr": {"generator": 0.00019628911191557014}, "memory": 405, "data_time": 0.08419, "loss_pix": 0.0233, "loss": 0.0233, "time": 0.16387}
