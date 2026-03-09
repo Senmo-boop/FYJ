@@ -11,6 +11,9 @@ Regarding testing, you can find the `test` file in the `tools` folder. You can r
 
 python "G:\code\project\code\tools\test.py" --config G:\code\project\code\my_config_2x\swinir2x.py --checkpoint G:\code\project\code\work_dirs_2x\swinir2x\iter_20000.pth --save-path G:\code\project\code\test_results\swinir_2x
 
+Regarding testing the model's image super-resolution reconstruction: you can use the following command: 
+python G:\code\project\code\demo.py --config G:\code\project\code\work_dirs_2x\swinir2x\swinir2x.py --checkpoint G:\code\project\code\work_dirs_2x\swinir2x\iter_20000.pth --img_path_dir` G:\code\project\code\datasets\test\LRx2 --save_path_dir G:\code\project\code\datasets\pred\swinir2x
+
 The following is the environment configuration:
 
 conda create -n py38 python=3.8 -y
@@ -26,4 +29,5 @@ pip install mmcv-full==1.7.0 -f https://download.openmmlab.com/mmcv/dist/cu113/t
 pip install -i https://pypi.tuna.tsinghua.edu.cn/simple -e .
 
 pip install -i https://pypi.tuna.tsinghua.edu.cn/simple tensorboard==2.11.0 timm segmentation-models-pytorch opencv-python einops yapf==0.40.1 setuptools==59.5.0 pytorch_msssim pytorch_wavelets PyWavelets scikit-image gradio==3.44.3
+
 
