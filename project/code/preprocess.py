@@ -1,6 +1,8 @@
 import os
 import random
 import argparse
+import json
+import shutil
 import pydicom
 import cv2
 import numpy as np
@@ -39,7 +41,12 @@ def process_dcm(args):
 
         # 归一化到[0,255]
         image = pixel_array.astype(float)
-        image = (np.maximum(image, 0) / image.max()) * 255.0
+        # 防止除零
+        max_val = image.max()
+        if max_val > 0:
+            image = (np.maximum(image, 0) / max_val) * 255.0
+        else:
+            image = np.zeros_like(image, dtype=np.uint8)
         image = image.astype("uint8")
 
         # 生成唯一文件名（使用相对路径前缀避免重名）
@@ -149,6 +156,8 @@ def main():
     parser.add_argument("--train", type=int, default=100, help="训练集抽取的文件夹数量 (默认: 100)")
     parser.add_argument("--val", type=int, default=10, help="验证集抽取的文件夹数量 (默认: 10)")
     parser.add_argument("--test", type=int, default=10, help="测试集抽取的文件夹数量 (默认: 10)")
+    parser.add_argument("--seed", type=int, default=None, help="随机种子，用于可重现的分割")
+    parser.add_argument("--overwrite", action="store_true", help="如果输出目录已存在，是否覆盖（清空后重新生成）")
     args = parser.parse_args()
 
     source_root = args.source
@@ -156,6 +165,26 @@ def main():
     train_count = args.train
     val_count = args.val
     test_count = args.test
+    seed = args.seed
+    overwrite = args.overwrite
+
+    # 设置随机种子
+    if seed is not None:
+        random.seed(seed)
+        print(f"随机种子已设置为: {seed}")
+
+    # 检查输出目录是否存在且非空
+    if os.path.exists(output_root) and os.listdir(output_root):
+        if overwrite:
+            print(f"输出目录 {output_root} 已存在，正在清空（--overwrite 已指定）...")
+            shutil.rmtree(output_root)
+            os.makedirs(output_root, exist_ok=True)
+        else:
+            raise RuntimeError(
+                f"输出目录 {output_root} 已存在且非空。请使用 --overwrite 覆盖，或指定一个新的输出目录以避免数据泄漏。"
+            )
+    else:
+        os.makedirs(output_root, exist_ok=True)
 
     # 1. 随机分配子文件夹
     print("正在随机分配子文件夹...")
@@ -166,7 +195,23 @@ def main():
     print(f"验证集：{len(val_folders)} 个文件夹")
     print(f"测试集：{len(test_folders)} 个文件夹")
 
-    # 2. 分别处理三个集合
+    # 2. 保存分割清单（JSON格式）
+    split_info = {
+        "seed": seed,
+        "train": train_folders,
+        "val": val_folders,
+        "test": test_folders,
+        "source": source_root,
+        "train_count": train_count,
+        "val_count": val_count,
+        "test_count": test_count
+    }
+    split_json_path = os.path.join(output_root, "split.json")
+    with open(split_json_path, "w", encoding="utf-8") as f:
+        json.dump(split_info, f, indent=4, ensure_ascii=False)
+    print(f"分割清单已保存至: {split_json_path}")
+
+    # 3. 分别处理三个集合
     collections = [
         (train_folders, os.path.join(output_root, "train datasets")),
         (val_folders,   os.path.join(output_root, "val datasets")),
