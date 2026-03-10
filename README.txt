@@ -1,7 +1,12 @@
 Instructions for Use
 
 This is an example of reproducing the SwinIR brain MRI image super-resolution reconstruction task using MMEditing. Here is a brief user guide: Regarding the data preprocessing script `preprocess.py`, you can directly run the following command in the command line to obtain a ready-to-use dataset:
-python "G:\code\project\code\preprocess.py" --source "G:\fastMRI_brain_DICOM" --output "G:\datasets" --train 100 --val 10 --test 10
+
+python "G:\code\project\code\preprocess.py" --source G:\fastMRI_brain_DICOM --output G:\datasets --train 100 --val 10 --test 10 --seed 42
+
+All packages required for preprocessing scripts:
+
+pip install pydicom opencv-python numpy tqdm
 
 Regarding training, you can find the `train` file in the `tools` folder. You can directly run it in the command line using swinir2x as an example:
 
@@ -29,6 +34,7 @@ pip install mmcv-full==1.7.0 -f https://download.openmmlab.com/mmcv/dist/cu113/t
 pip install -i https://pypi.tuna.tsinghua.edu.cn/simple -e .
 
 pip install -i https://pypi.tuna.tsinghua.edu.cn/simple tensorboard==2.11.0 timm segmentation-models-pytorch opencv-python einops yapf==0.40.1 setuptools==59.5.0 pytorch_msssim pytorch_wavelets PyWavelets scikit-image gradio==3.44.3
+
 
 
 
